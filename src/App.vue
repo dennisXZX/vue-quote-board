@@ -28,7 +28,7 @@
           'Just a quote to see',
           'test quote',
         ],
-        maxQuotes: 5
+        maxQuotes: 6
       }
     },
     methods: {
