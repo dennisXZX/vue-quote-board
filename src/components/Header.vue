@@ -5,7 +5,7 @@
             <div class="progress">
                 <div class="progress-bar" role="progressbar"
                      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                     :style="quoteBarWidth">
+                     :style="[progressBarWidth, progressBarColor]">
                     {{ quoteCount }} / {{ maxQuotes }}
                 </div>
             </div>
@@ -17,9 +17,16 @@
   export default {
     props: ['quoteCount', 'maxQuotes'],
     computed: {
-      quoteBarWidth() {
+      progressBarWidth() {
         return {
           width: (this.quoteCount / this.maxQuotes) * 100 + '%'
+        }
+      },
+      progressBarColor() {
+        if (this.quoteCount === this.maxQuotes) {
+          return {
+            backgroundColor: 'red'
+          }
         }
       }
     }
