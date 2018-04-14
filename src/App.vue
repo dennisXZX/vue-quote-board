@@ -34,7 +34,7 @@
     methods: {
       quoteAdded(newQuote) {
         if (this.quotes.length >= this.maxQuotes) {
-          return alert('Please delete quote first.');
+          return alert('Please delete a quote first.');
         }
         this.quotes.unshift(newQuote);
       },
